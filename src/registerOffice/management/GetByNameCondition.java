@@ -10,10 +10,13 @@ public class GetByNameCondition extends Condition<Person>{
 	{
 		this.name=name;
 	}
+	
 	@Override
-	public boolean check(Person obj) {
-		// TODO Auto-generated method stub
+	protected boolean check(Person obj) {
+		
 		return obj.getName().equalsIgnoreCase(name);
 	}
+	
+	
 
 }
