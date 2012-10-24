@@ -31,10 +31,21 @@ public class Main {
 		
 		Condition<Person> byname=new GetByNameCondition("Adam");
 		Condition<Person> byaddress=new GetByAddressCondition("Sopot");
+		Condition<Person> mainCondition=new Condition<Person>()
+				{
+					@Override
+					protected boolean check(Person obj) {
+						return true;
+					}};
+		
 		byname.setCondition(byaddress);
-		for(Person p:mgr.getAll(byname))
+		mainCondition.setCondition(byname);
+		for(Person p:mgr.getAll(mainCondition))
 		{
-			System.out.println(p.getName()+" "+p.getAddress());
+			System.out.println(p.getName()
+					+" "
+					+p.getAddress()
+					+" "+ p.getPesel());
 		}
 		
 	}
