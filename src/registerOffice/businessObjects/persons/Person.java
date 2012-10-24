@@ -3,6 +3,7 @@ package registerOffice.businessObjects.persons;
 import java.util.ArrayList;
 import java.util.List;
 
+import registerOffice.Context;
 import registerOffice.businessObjects.cars.*;
 
 public class Person {
@@ -10,9 +11,18 @@ public class Person {
 	private String name;
 	private List<Car> cars;
 	private String pesel;
+	private String address;
+	Context context;
 	
+	public Person(String name, String pesel, String address)
+	{
+		this(name,pesel);
+		this.address=address;
+	}
 	public Person(String name, String pesel)
 	{
+		context= Context.getInstance();
+		context.raisenumberOfPeople();
 		this.pesel=pesel;
 		this.name=name;
 		this.cars=new ArrayList<Car>();
@@ -25,6 +35,7 @@ public class Person {
 	
 	public Person()
 	{
+		
 		this("","");
 	}
 	
@@ -49,6 +60,19 @@ public class Person {
 		this.pesel = pesel;
 	}
 	
-	
+	@Override
+	protected void finalize() throws Throwable {
+		context.reducePeople();
+		super.finalize();
+	}
+
+	public String getAddress() {
+		return address;
+	}
+
+	public void setAddress(String address) {
+		this.address = address;
+	}
+
 	
 }

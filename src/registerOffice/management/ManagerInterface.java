@@ -7,7 +7,7 @@ import registerOffice.businessObjects.persons.Person;
 public interface ManagerInterface<TEntity> {
 	
 	public TEntity get(Condition<TEntity> condition);
-	public List<TEntity> getAll(/**/);
+	public List<TEntity> getAll(Condition<TEntity> condition);
 	public boolean save(TEntity obj);
 	public boolean delete(TEntity obj);
 	
