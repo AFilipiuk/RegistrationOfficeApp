@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import registerOffice.businessObjects.persons.Person;
+import registerOffice.management.conditions.Condition;
 
 public class PersonManager implements ManagerInterface<Person>{
 

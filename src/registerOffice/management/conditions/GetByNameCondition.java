@@ -1,4 +1,4 @@
-package registerOffice.management;
+package registerOffice.management.conditions;
 
 import registerOffice.businessObjects.persons.Person;
 

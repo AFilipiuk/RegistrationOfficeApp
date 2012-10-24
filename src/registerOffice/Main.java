@@ -10,6 +10,9 @@ import registerOffice.businessObjects.cars.PersonCar;
 import registerOffice.businessObjects.cars.TruckCar;
 import registerOffice.businessObjects.persons.*;
 import registerOffice.management.*;
+import registerOffice.management.conditions.Condition;
+import registerOffice.management.conditions.GetByAddressCondition;
+import registerOffice.management.conditions.GetByNameCondition;
 
 public class Main {
 
